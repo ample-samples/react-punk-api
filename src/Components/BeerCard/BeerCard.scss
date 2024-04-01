@@ -1,0 +1,13 @@
+.beer {
+	border: 2px solid black;
+	width: 220px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		margin: 0 auto;
+		height: 300px;
+		overflow: hidden;
+	}
+}
