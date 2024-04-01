@@ -12,10 +12,10 @@ import './App.scss'
 function App() {
 
   return (
-    <>
-      <Sidebar />
-      <BeerDisplay />
-    </>
+      <main>
+        <Sidebar />
+        <BeerDisplay />
+      </main>
   )
 }
 

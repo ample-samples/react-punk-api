@@ -3,3 +3,8 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
+main {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+}

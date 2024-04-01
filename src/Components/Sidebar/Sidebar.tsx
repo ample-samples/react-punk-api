@@ -3,10 +3,10 @@ import FilterSelection from "../FilterSelection/FilterSelection"
 
 const Sidebar = () => {
   return (
-    <>
-			<SearchBar />
-			<FilterSelection />
-		</>
+    <section className="sidebar">
+      <SearchBar />
+      <FilterSelection />
+    </section>
   )
 }
 
