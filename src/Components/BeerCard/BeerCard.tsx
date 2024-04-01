@@ -1,6 +1,14 @@
-const BeerCard = () => {
+import { Beer } from "../../types/types"
+
+type BeerCardProps = {
+	beer: Beer
+}
+
+const BeerCard = ({ beer }:BeerCardProps) => {
   return (
-    <></>
+    <>{
+			beer.name
+		}</>
   )
 }
 

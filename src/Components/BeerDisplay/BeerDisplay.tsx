@@ -1,10 +1,13 @@
 import BeerCard from "../BeerCard/BeerCard"
+import beers from "../../data/beers"
 
 const BeerDisplay = () => {
   return (
     <>
-			<BeerCard />
-		</>
+      {beers.map( beer => { 
+				return <BeerCard beer={beer} />
+			})  }
+    </>
   )
 }
 
