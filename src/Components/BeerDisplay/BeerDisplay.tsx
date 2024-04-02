@@ -2,7 +2,12 @@ import BeerCard from "../BeerCard/BeerCard"
 import beers from "../../data/dataFormatted"
 import "./BeerDisplay.scss"
 
-const BeerDisplay = () => {
+type BeerDisplayProps = {
+	filter: unknown;
+	searchTerm: string;
+}
+
+const BeerDisplay = ({ filter, searchTerm }: BeerDisplayProps) => {
   return (
       <section className="beer-display">
         {beers.map((beer, index) => {

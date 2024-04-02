@@ -1,6 +1,11 @@
+import { ChangeEvent } from "react";
 import "./FilterSelection.scss"
 
-const FilterSelection = () => {
+type FilterSelection = {
+	handleFilter: (event: ChangeEvent) => void;
+}
+
+const FilterSelection = ({ handleFilter }: FilterSelection) => {
   return (
 		<section className="filter-selection">
 			<form className="filter-selection__filter-form" action="">

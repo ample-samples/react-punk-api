@@ -7,14 +7,24 @@
 
 import BeerDisplay from './Components/BeerDisplay/BeerDisplay'
 import Sidebar from './Components/Sidebar/Sidebar'
+import { ChangeEvent, useState } from 'react'
 import './App.scss'
 
 function App() {
+  const [searchTerm, setSearchTerm] = useState<string>("")
+  const [filter, setFilter] = useState({})
+  const handleSearch = (event: ChangeEvent) => {
+
+  }
+  const handleFilter = (event: ChangeEvent) => {
+
+  }
+
 
   return (
       <main>
-        <Sidebar />
-        <BeerDisplay />
+        <Sidebar handleFilter={handleFilter} handleSearch={handleSearch} />
+        <BeerDisplay searchTerm={searchTerm} filter={filter} />
       </main>
   )
 }

@@ -1,11 +1,17 @@
 import SearchBar from "../SearchBar/SearchBar"
 import FilterSelection from "../FilterSelection/FilterSelection"
+import { ChangeEvent } from "react"
 
-const Sidebar = () => {
+type SideBarProps = {
+	handleFilter: (event: ChangeEvent) => void,
+	handleSearch: (event: ChangeEvent) => void
+}
+
+const Sidebar = ({handleSearch, handleFilter}:SideBarProps) => {
   return (
     <section className="sidebar">
-      <SearchBar />
-      <FilterSelection />
+      <SearchBar handleSearch={handleSearch} />
+      <FilterSelection handleFilter={handleFilter} />
     </section>
   )
 }
