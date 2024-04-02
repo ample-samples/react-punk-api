@@ -13,13 +13,15 @@ import './App.scss'
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("")
   const [filter, setFilter] = useState({})
-  const handleSearch = (event: ChangeEvent) => {
 
+  const handleSearch = (event: ChangeEvent) => {
+    const userInput = event.currentTarget as HTMLInputElement
+    setSearchTerm(userInput.value)
   }
+
   const handleFilter = (event: ChangeEvent) => {
 
   }
-
 
   return (
       <main>

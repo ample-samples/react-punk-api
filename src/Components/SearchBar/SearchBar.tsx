@@ -6,7 +6,7 @@ type SearchBarProps = {
 
 const SearchBar = ({ handleSearch }: SearchBarProps) => {
   return (
-		<input type="text" />
+		<input onChange={handleSearch} type="text" />
   )
 }
 
