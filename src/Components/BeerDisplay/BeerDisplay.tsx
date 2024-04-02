@@ -1,5 +1,5 @@
 import BeerCard from "../BeerCard/BeerCard"
-import beers from "../../data/data_formatted"
+import beers from "../../data/dataFormatted"
 import "./BeerDisplay.scss"
 
 const BeerDisplay = () => {
