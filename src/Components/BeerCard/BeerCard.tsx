@@ -1,5 +1,6 @@
 import { Beer } from "../../types/types"
 import "./BeerCard.scss"
+import { isClassic } from "../../utilities/utilities"
 
 type BeerCardProps = {
 	beer: Beer
@@ -17,10 +18,8 @@ const BeerCard = ({ beer }:BeerCardProps) => {
 			<h3 className="beer__name">{ beer.name }</h3>
 			<p className="beer__description">{ beer.tagline }</p>
 			<p className="beer__info"><strong>ABV:</strong> { beer.abv }%</p>
-			{
-				<p className="beer__info"></p>
-			}
 			<p className="beer__info"><strong>Acidity: </strong>{ beer.ph }ph</p>
+			{isClassic(beer.first_brewed) && <p className="beer__info"><strong>Classic</strong></p> }
 		</div>
   )
 }
