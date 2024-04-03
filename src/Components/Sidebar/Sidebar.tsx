@@ -11,6 +11,10 @@ type SideBarProps = {
 const Sidebar = ({ handleSearch, handleFilter }: SideBarProps) => {
   return (
     <section className="sidebar">
+      <div className="sidebar__logo">
+        <img src="https://icons.iconarchive.com/icons/iconarchive/fat-sugar-food/256/Drink-Beer-icon.png" alt="" />
+	<p>Beer Buddy</p>
+      </div>
       <SearchBar handleSearch={handleSearch} />
       <FilterSelection handleFilter={handleFilter} />
     </section>
