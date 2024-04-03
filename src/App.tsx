@@ -29,6 +29,7 @@ function App() {
     const newFilter = {...filter}
     newFilter[id] = checked
     setFilter(newFilter)
+    console.log(filter)
   }
 
   return (
