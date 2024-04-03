@@ -20,15 +20,16 @@ const filterMatchesName = (searchItem: string, userSearch: string) => {
   return false
 }
 
+const beerMatchesFilter = ({ abv, ph, ebc, first_brewed }: Beer, userFilter: Filter) => {
+  if (userFilter["high-abv"] && (abv < 6)) return false
+  if (userFilter["acidic"] && (ph >= 4)) return false
+  if (userFilter["classic-range"] && !isClassic(first_brewed)) return false
+  if (userFilter["dark-beer"] && (ebc <= 25)) return false
+  if (userFilter["light-beer"] && (ebc > 25)) return false
+  return true
+}
+
 const BeerDisplay = ({ filter, searchTerm }: BeerDisplayProps) => {
-  const beerMatchesFilter = ( {abv, ph, ebc, first_brewed}: Beer, userFilter: Filter ) => {
-    if (userFilter["high-abv"] && (abv < 6)) return false
-    if (userFilter["acidic"] && (ph >= 4)) return false
-    if (userFilter["classic-range"] && !isClassic(first_brewed)) return false
-    if (userFilter["dark-beer"] && (ebc <= 25)) return false
-    if (userFilter["light-beer"] && (ebc > 25)) return false
-    return true
-  }
 
   return (
     <section className="beer-display">
