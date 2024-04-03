@@ -2,7 +2,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 40px;
-	padding: 8px 0;
+	padding: 8px;
 	justify-content: space-around;
-	margin-left: 220px;
+	max-width: 1300px;
+	margin: 0 auto 0 220px;
 }
