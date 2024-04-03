@@ -15,11 +15,14 @@ const BeerCard = ({ beer }: BeerCardProps) => {
   return (
     <div className="beer">
       <img className="beer__image" src={beer.image_url} alt="" />
-      <h3 className="beer__name">{beer.name}</h3>
-      <p className="beer__description">{beer.tagline}</p>
-      <p className="beer__info"><strong>ABV:</strong> {beer.abv}%</p>
-      <p className="beer__info"><strong>Acidity: </strong>{beer.ph}ph</p>
-      {isClassic(beer.first_brewed) && <p className="beer__info"><strong>Classic</strong></p>}
+      <div className="beer__content">
+        <h3 className="beer__name">{beer.name}</h3>
+        <p className="beer__description">{beer.tagline}</p>
+	<div className="beer__empty-separator"></div>
+        <p className="beer__info"><strong>ABV:</strong> {beer.abv}%</p>
+        <p className="beer__info"><strong>Acidity: </strong>{beer.ph}ph</p>
+        {isClassic(beer.first_brewed) && <p className="beer__info"><strong>Classic</strong></p>}
+      </div>
     </div>
   )
 }

@@ -1,13 +1,28 @@
 .beer {
 	border: 2px solid black;
+	border-radius: 4px;
 	width: 220px;
 	height: 400px;
 	display: flex;
 	flex-direction: column;
+	justify-items: flex-end;
 
 	&__image {
-		margin: 0 auto;
-		height: 300px;
-		overflow: hidden;
+		margin: 5px auto;
+		height: 250px;
+	}
+	&__content {
+		border: 2px solid black;
+		margin: 2px;
+		padding: 5px;
+		background-color: white;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.beer__empty-separator {
+			margin: auto 0;
+			background-color: red;
+		}
 	}
 }

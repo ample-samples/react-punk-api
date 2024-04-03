@@ -1,6 +1,7 @@
 import SearchBar from "../SearchBar/SearchBar"
 import FilterSelection from "../FilterSelection/FilterSelection"
 import { ChangeEvent, FormEventHandler } from "react"
+import "./Sidebar.scss"
 
 type SideBarProps = {
   handleFilter: FormEventHandler;
