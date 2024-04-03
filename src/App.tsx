@@ -10,9 +10,13 @@ import Sidebar from './Components/Sidebar/Sidebar'
 import { ChangeEvent, useState } from 'react'
 import './App.scss'
 
+type FilterType = {
+  [key: string]: boolean
+}
+
 function App() {
   const [searchTerm, setSearchTerm] = useState<string>("")
-  const [filter, setFilter] = useState({})
+  const [filter, setFilter] = useState<FilterType>({})
 
   const handleSearch = (event: ChangeEvent) => {
     const userInput = event.currentTarget as HTMLInputElement
@@ -20,14 +24,18 @@ function App() {
   }
 
   const handleFilter = (event: ChangeEvent) => {
-
+    const checkboxElement = event.target as HTMLInputElement
+    const { checked, id } = checkboxElement
+    const newFilter = {...filter}
+    newFilter[id] = checked
+    setFilter(newFilter)
   }
 
   return (
-      <main>
-        <Sidebar handleFilter={handleFilter} handleSearch={handleSearch} />
-        <BeerDisplay searchTerm={searchTerm} filter={filter} />
-      </main>
+    <main>
+      <Sidebar handleFilter={handleFilter} handleSearch={handleSearch} />
+      <BeerDisplay searchTerm={searchTerm} filter={filter} />
+    </main>
   )
 }
 
