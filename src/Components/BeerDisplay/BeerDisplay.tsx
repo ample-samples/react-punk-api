@@ -1,5 +1,5 @@
 import BeerCard from "../BeerCard/BeerCard"
-import beers from "../../data/dataFormatted"
+import beers from "../../data/beers"
 import "./BeerDisplay.scss"
 
 type BeerDisplayProps = {
