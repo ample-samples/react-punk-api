@@ -3,11 +3,11 @@ import FilterSelection from "../FilterSelection/FilterSelection"
 import { ChangeEvent, FormEventHandler } from "react"
 
 type SideBarProps = {
-	handleFilter: FormEventHandler;
-	handleSearch: (event: ChangeEvent) => void
+  handleFilter: FormEventHandler;
+  handleSearch: (event: ChangeEvent) => void
 }
 
-const Sidebar = ({handleSearch, handleFilter}:SideBarProps) => {
+const Sidebar = ({ handleSearch, handleFilter }: SideBarProps) => {
   return (
     <section className="sidebar">
       <SearchBar handleSearch={handleSearch} />

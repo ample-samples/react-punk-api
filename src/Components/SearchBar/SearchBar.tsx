@@ -1,12 +1,12 @@
 import { ChangeEvent } from "react"
 
 type SearchBarProps = {
-	handleSearch: (event: ChangeEvent) => void
+  handleSearch: (event: ChangeEvent) => void
 }
 
 const SearchBar = ({ handleSearch }: SearchBarProps) => {
   return (
-		<input onChange={handleSearch} type="text" />
+    <input onChange={handleSearch} type="text" />
   )
 }
 

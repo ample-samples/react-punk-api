@@ -26,7 +26,7 @@ function App() {
   const handleFilter = (event: ChangeEvent) => {
     const checkboxElement = event.target as HTMLInputElement
     const { checked, id } = checkboxElement
-    const newFilter = {...filter}
+    const newFilter = { ...filter }
     newFilter[id] = checked
     setFilter(newFilter)
   }
