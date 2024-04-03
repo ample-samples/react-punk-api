@@ -19,23 +19,21 @@ const filterMatchesName = (searchItem: string, userSearch: string) => {
   return false
 }
 
-
 const BeerDisplay = ({ filter, searchTerm }: BeerDisplayProps) => {
-
-  const beerMatchesFilter = ( {abv, ph, ebc, first_brewed}: Beer, filterState: Filter ) => {
-    if (filterState["high-abv"] && (abv < 6)) return true
-    if (filterState["acidic"] && (ph >= 4)) return true
+  const beerMatchesFilter = ( {abv, ph, ebc, first_brewed}: Beer, userFilter: Filter ) => {
+    if (userFilter["high-abv"] && (abv < 6)) return false
+    if (userFilter["acidic"] && (ph >= 4)) return false
     // if (filterState["classic-range"]){}
-    if (filterState["dark-beer"] && (ebc < 25)) return true
-    if (filterState["light-beer"] && (ebc >= 25)) return true
-    return false
+    if (userFilter["dark-beer"] && (ebc <= 25)) return false
+    if (userFilter["light-beer"] && (ebc > 25)) return false
+    return true
   }
 
   return (
     <section className="beer-display">
       {beers.map((beer, index) => {
         if (!filterMatchesName(beer.name, searchTerm)) return
-        if (!beerMatchesFilter(beer, filter))
+        if (!beerMatchesFilter(beer, filter)) return
         return <BeerCard beer={beer} key={index} />
       })}
     </section>
