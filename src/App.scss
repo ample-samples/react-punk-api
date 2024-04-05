@@ -12,4 +12,39 @@ main {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	min-height: 100vh;
+
+	.beer-display {
+		margin-left: 235px;
+		margin-right: 20px;
+	}
+
+	.sidebar-toggle {
+		display: none;
+
+		img {
+			height: 40px;
+		}
+	}
+
+}
+
+@media screen and (max-width: 786px) {
+	main {
+		.sidebar {
+			display: none;
+		}
+
+		.sidebar-toggle {
+			display: block;
+
+			img {
+				height: 40px;
+			}
+		}
+
+		.beer-display {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
 }

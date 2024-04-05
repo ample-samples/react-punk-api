@@ -24,3 +24,47 @@
 		}
 	}
 }
+
+.sidebar-toggle {
+	margin-top: 10px;
+	padding: 5px 5px 2px 5px;
+	background-color: #33333333;
+	backdrop-filter: blur(10px);
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-radius: 0 10px 10px 0;
+	box-shadow: 3px 3px 5px #00000088;
+	position: sticky;
+	top: 10px;
+	z-index: 1;
+	width: 50px;
+	height: 50px;
+
+	.sidebar-small {
+		width: 250px;
+		padding: 8px 5px;
+		background: #FDDA5E;
+		background: linear-gradient(0, #BAA34B 0%, lighten(#FDDA5E, 10%) 100%);
+		border: 1px solid black;
+		border-radius: 10px;
+		position: absolute;
+		top: 90px;
+		box-shadow: 3px 3px 5px #00000088;
+		z-index: 3;
+
+		&__logo {
+			display: grid;
+			grid-template-columns: 50px 1fr;
+			align-items: center;
+			font-size: 30px;
+			margin-bottom: 10px;
+			font-family: "Playfair Display";
+			text-decoration: underline;
+
+			img {
+				width: 100%;
+			}
+		}
+	}
+}
