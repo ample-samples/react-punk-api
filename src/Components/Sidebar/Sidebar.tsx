@@ -1,14 +1,17 @@
 import SearchBar from "../SearchBar/SearchBar"
 import FilterSelection from "../FilterSelection/FilterSelection"
 import { ChangeEvent, FormEventHandler, useState } from "react"
+import { FilterType } from "../../App"
 import "./Sidebar.scss"
 
 type SideBarProps = {
   handleFilter: FormEventHandler;
-  handleSearch: (event: ChangeEvent) => void
+  handleSearch: (event: ChangeEvent) => void;
+  filter: FilterType;
+  search: string;
 }
 
-const Sidebar = ({ handleSearch, handleFilter }: SideBarProps) => {
+const Sidebar = ({search, filter, handleSearch, handleFilter }: SideBarProps) => {
   const [sidebarIsHidden, setSidebarIsHidden] = useState(true)
 
   const handleClick = () => {
@@ -25,8 +28,8 @@ const Sidebar = ({ handleSearch, handleFilter }: SideBarProps) => {
 	      <img src="https://icons.iconarchive.com/icons/iconarchive/fat-sugar-food/256/Drink-Beer-icon.png" alt="" />
 	      <p>Beer Buddy</p>
 	    </div>
-	    <SearchBar handleSearch={handleSearch} />
-	    <FilterSelection handleFilter={handleFilter} />
+	    <SearchBar search={search} key={"search"} handleSearch={handleSearch} />
+	    <FilterSelection filter={filter} handleFilter={handleFilter} />
 	  </section>
 	}
       </div>
@@ -35,8 +38,8 @@ const Sidebar = ({ handleSearch, handleFilter }: SideBarProps) => {
           <img src="https://icons.iconarchive.com/icons/iconarchive/fat-sugar-food/256/Drink-Beer-icon.png" alt="" />
           <p>Beer Buddy</p>
         </div>
-        <SearchBar handleSearch={handleSearch} />
-        <FilterSelection handleFilter={handleFilter} />
+        <SearchBar search={search} handleSearch={handleSearch} />
+        <FilterSelection filter={filter} handleFilter={handleFilter} />
       </section>
     </>
   )

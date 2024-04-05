@@ -2,12 +2,13 @@ import { ChangeEvent } from "react"
 import "./Searchbar.scss"
 
 type SearchBarProps = {
-  handleSearch: (event: ChangeEvent) => void
+  handleSearch: (event: ChangeEvent) => void;
+  search: string;
 }
 
-const SearchBar = ({ handleSearch }: SearchBarProps) => {
+const SearchBar = ({ handleSearch, search }: SearchBarProps) => {
   return (
-    <input placeholder="Search.." className="search-bar" onChange={handleSearch} type="text" />
+    <input value={search} placeholder="Search.." className="search-bar" onChange={handleSearch} type="text" />
   )
 }
 

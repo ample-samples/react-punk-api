@@ -10,7 +10,7 @@ import Sidebar from './Components/Sidebar/Sidebar'
 import { ChangeEvent, useState } from 'react'
 import './App.scss'
 
-type FilterType = {
+export type FilterType = {
   [key: string]: boolean
 }
 
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <main>
-      <Sidebar handleFilter={handleFilter} handleSearch={handleSearch} />
+      <Sidebar search={searchTerm} filter={filter} handleFilter={handleFilter} handleSearch={handleSearch} />
       <BeerDisplay searchTerm={searchTerm} filter={filter} />
     </main>
   )
