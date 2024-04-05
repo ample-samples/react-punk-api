@@ -1,6 +1,4 @@
 import { render, screen } from "@testing-library/react"
-import userEvent from "@testing-library/user-event"
-import { ReactNode } from "react"
 import App from "./App"
 import BeerDisplay from "./Components/BeerDisplay/BeerDisplay"
 
