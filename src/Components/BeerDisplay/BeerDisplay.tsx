@@ -11,7 +11,8 @@ type BeerDisplayProps = {
   searchTerm: string;
 }
 
-const filterMatchesName = (searchItem: string, userSearch: string) => {
+const filterMatchesName = (searchItem: string | null, userSearch: string) => {
+  if (searchItem === null) return false
   if (userSearch === '') {
     return true
   } else if (searchItem.toLowerCase().includes(userSearch.toLowerCase())) {
@@ -20,7 +21,8 @@ const filterMatchesName = (searchItem: string, userSearch: string) => {
   return false
 }
 
-const beerMatchesFilter = ({ abv, ph, ebc, first_brewed }: Beer, userFilter: Filter) => {
+const beerMatchesFilter = ({ abv, ph, ebc, first_brewed, name }: Beer, userFilter: Filter) => {
+  if (!abv || !ph || !ebc || !first_brewed || !name) return false
   if (userFilter["high-abv"] && (abv < 6)) return false
   if (userFilter["acidic"] && (ph >= 4)) return false
   if (userFilter["classic-range"] && !isClassic(first_brewed)) return false

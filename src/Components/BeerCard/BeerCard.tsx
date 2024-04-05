@@ -6,22 +6,18 @@ type BeerCardProps = {
   beer: Beer
 }
 
-const formatDescription = (beerDescription: string): string => {
-  const maxLength = 200
-  return beerDescription.length > maxLength ? beerDescription.substring(0, maxLength) + "..." : beerDescription
-}
-
 const BeerCard = ({ beer }: BeerCardProps) => {
+	const {image_url, name, tagline, first_brewed, abv, ph} = beer;
   return (
     <div  className="beer">
-      <img className="beer__image" src={beer.image_url} alt="" />
+      <img className="beer__image" src={image_url ?? ""} alt="" />
       <div className="beer__content">
-        <h3 className="beer__name">{beer.name}</h3>
-        <p className="beer__tagline">{beer.tagline}</p>
+        <h3 className="beer__name">{name}</h3>
+        <p className="beer__tagline">{tagline}</p>
 	<div className="beer__empty-separator"></div>
-        <p className="beer__info"><strong>ABV:</strong> {beer.abv}%</p>
-        <p className="beer__info"><strong>Acidity: </strong>{beer.ph}ph</p>
-        {isClassic(beer.first_brewed) && <p className="beer__info"><strong>Classic 🍻</strong></p>}
+        <p className="beer__info"><strong>ABV:</strong> {abv}%</p>
+        <p className="beer__info"><strong>Acidity: </strong>{ph}ph</p>
+        {isClassic(first_brewed ?? "9999") && <p className="beer__info"><strong>Classic 🍻</strong></p>}
       </div>
     </div>
   )
