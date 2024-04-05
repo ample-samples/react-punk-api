@@ -32,7 +32,7 @@ const beerMatchesFilter = ({ abv, ph, ebc, first_brewed }: Beer, userFilter: Fil
 const BeerDisplay = ({ filter, searchTerm }: BeerDisplayProps) => {
 
   return (
-    <section className="beer-display">
+    <section data-testid="beer-display" className="beer-display">
       {beers.map((beer, index) => {
         if (!filterMatchesName(beer.name, searchTerm)) return
         if (!beerMatchesFilter(beer, filter)) return

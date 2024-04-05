@@ -13,7 +13,7 @@ const formatDescription = (beerDescription: string): string => {
 
 const BeerCard = ({ beer }: BeerCardProps) => {
   return (
-    <div className="beer">
+    <div  className="beer">
       <img className="beer__image" src={beer.image_url} alt="" />
       <div className="beer__content">
         <h3 className="beer__name">{beer.name}</h3>
